@@ -21,7 +21,7 @@ public class calculatorMain {
 		
 		}
 		
-		
+		sc.close();
 		
 }
 
