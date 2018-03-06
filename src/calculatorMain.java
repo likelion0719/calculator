@@ -7,25 +7,39 @@ public class calculatorMain {
 		System.out.println("첫번째 입력값");
 		int first = sc.nextInt();
 		System.out.println("첫번째 입력값: "+first);
-	
-		System.out.println("두번째 입력값");
-		int second = sc.nextInt();
-		System.out.println("두번째 입력값: "+second);
+		String symbol;
+		int second = 0;
 		
-		System.out.println("연산 부호 입력");
-		String symbol = sc.next();
+		while(true) {
+			System.out.println("연산 부호 입력");
+			 symbol = sc.next();
+			
+			if("quit".equals(symbol)) {
+				System.out.println("결과: "+first);
+				break;
+			}else {
+				System.out.println("두번째 입력값");
+				second = sc.nextInt();
+				System.out.println("두번째 입력값: "+second);
+
+				if("+".equals(symbol)) {
+					first+=second;
+				}else if ("-".equals(symbol)) {
+					first-=second;
+				}else if ("*".equals(symbol)) {
+					first*=second;
+				}else if("/".equals(symbol)){
+					first/=second;
+				}else {
+					System.out.println("사칙연산에 해당하지 않는 값을 입력");
+				}
+
+			}
+				
+						
 		
-		if("+".equals(symbol)) {
-			System.out.println("더하기 값: "+ (first+second));
-		}else if ("-".equals(symbol)) {
-			System.out.println("빼기 값: "+ (first-second));
-		}else if ("-".equals(symbol)) {
-			System.out.println("곱하기 값: "+ (first*second));
-		}else if("/".equals(symbol)){
-			System.out.println("나누기 값: "+ (first/second));
-		}else {
-			System.out.println("사칙연산에 해당하지 않는 값을 입력");
 		}
+		
 		
 		
 }
